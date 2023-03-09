@@ -1,0 +1,11 @@
+.add-new-type{
+    border: 2px solid rgb(87, 5, 168);
+    border-radius: 15px 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    background-color:rgb(87, 5, 168) ;
+    color: white;
+    justify-content: center;
+}

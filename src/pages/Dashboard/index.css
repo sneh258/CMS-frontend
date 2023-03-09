@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.comp1{
+    flex: 5;
+}
+
+.comp2{
+    flex:19;
+}

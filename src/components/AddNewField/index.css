@@ -1,0 +1,37 @@
+.add-new-field{
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px 15px;
+    display: flex;
+    margin: 15px;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 50px;
+    /* border: 1px solid red; */
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    background-color: yellowgreen;
+    color: white;
+}
+
+.logo p{
+    padding-left: 15px;
+}
+
+.type p{
+    color: rgb(175, 173, 173);
+}
+
+.icon{
+    /* border: 1px solid red; */
+    margin-top: 15px;
+    display: flex;
+    padding-right: 5px;
+
+}
+
+#icon-one{
+    margin-right: 15px;
+}
