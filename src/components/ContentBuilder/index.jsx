@@ -1,9 +1,22 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { makeRequest } from './../../utils/makeRequest';
+import { GET_COLLECTION_DETAILS } from '../../constants/apiEndPoints';
+import { useNavigate } from 'react-router-dom';
 
 export default function ContentBuilder() {
+  const [collections, setCollections] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    makeRequest(GET_COLLECTION_DETAILS, navigate).then((response) => {
+      setCollections(response.data);
+    });
+  }, []);
+
   return (
     <div className="content-builder">
       <div className="header">
@@ -17,9 +30,9 @@ export default function ContentBuilder() {
           </div>
         </div>
         <ul className="list">
-          <li>company details</li>
-          <li>idv_functionality</li>
-          <li>trials</li>
+          {collections.map((collection) => (
+            <li key={collection.id}>{collection.name}</li>
+          ))}
         </ul>
       </div>
       <div className="content-type">

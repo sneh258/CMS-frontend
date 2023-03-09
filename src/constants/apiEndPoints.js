@@ -40,4 +40,8 @@ export const GET_CONTENT_DETAIL_URL = {
   url: 'record/details',
   method: 'get',
 };
+export const GET_COLLECTION_DETAILS = {
+  url: 'collection/details',
+  method: 'get',
+};
 
