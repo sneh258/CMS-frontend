@@ -1,0 +1,49 @@
+.content-builder {
+  /* border: 2px solid pink; */
+  height: 100vh;
+  width: 305px;
+  background-color: rgb(52, 52, 52);
+  color: rgb(176, 171, 171);
+  font-family: 'Montserrat', sans-serif;
+}
+.header {
+  border: 1px solid rgb(9, 9, 9);
+  width: 303px;
+  height: 50px;
+  background-color: rgb(87, 5, 168);
+  color: white;
+  font-size: 20px;
+}
+.header p {
+  padding-left: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.collection-name {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+.collection-name p {
+  font-weight: 800;
+  padding-left: 15px;
+}
+.content-type p {
+  font-weight: 800;
+  background-color: black;
+  color: white;
+  padding-left: 15px;
+}
+
+.font {
+  margin-top: 19px;
+  margin-right: 10px;
+}
+
+.list {
+  padding-left: 30px;
+}
+
+li {
+  padding-bottom: 15px;
+}
