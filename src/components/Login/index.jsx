@@ -48,7 +48,6 @@ export default function UserLogin() {
                 name="username"
                 value={user}
                 onChange={(event) => setUser(event.target.value)}
-                placeholder="enter your username"
               />
               <p>Password:</p>
               <input
@@ -56,7 +55,6 @@ export default function UserLogin() {
                 name="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                placeholder="enter your password"
               />
               <button
                 type="submit"

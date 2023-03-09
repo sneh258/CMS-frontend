@@ -8,7 +8,7 @@
   flex: 10;
   height: 100vh;
   position: relative;
-  background-color: rgba(221, 205, 246, 0.971);
+  background-color: rgb(236,238,252);
 }
 
 .image-div img {
@@ -35,7 +35,7 @@
   border: 2px solid gray;
   flex: 6;
   display: flex;
-  background-color: black;
+  background-color: rgb(39, 39, 39);
   color: white;
   font-weight: 1000;
   justify-content: center;

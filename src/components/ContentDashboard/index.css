@@ -1,3 +1,6 @@
+.main_div{
+  margin-top: 0;
+}
 .details {
   display: flex;
   height: 93vh;

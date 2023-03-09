@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Entry from '../Entry';
 import SideModal from '../SideModal';
+import Header from '../Header';
 import './index.css';
 
 export default function CollectionType() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="collection-type-container">
+      <Header />
       <div className="collection-type-header">
         <div className="entries-number">13 Entries Found</div>
         <button className="add-entry" onClick={() => setIsOpen(true)}>
