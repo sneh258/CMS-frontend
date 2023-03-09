@@ -1,0 +1,96 @@
+.main-div {
+  display: flex;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.image-div {
+  flex: 10;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(221, 205, 246, 0.971);
+}
+
+.image-div img {
+  padding-top: 150px;
+  padding-left: 150px;
+}
+.image-div p {
+  margin-left: 120px;
+  margin-top: 40px;
+  font-size: 35px;
+  font-weight: 900;
+  color: rgb(90, 85, 85);
+}
+
+#p1 {
+  position: absolute;
+}
+#p2 {
+  position: absolute;
+  margin-top: 90px;
+}
+
+.login-div {
+  border: 2px solid gray;
+  flex: 6;
+  display: flex;
+  background-color: black;
+  color: white;
+  font-weight: 1000;
+  justify-content: center;
+  height: 100%;
+}
+.sub-login-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-cred {
+  padding-top: 100px;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+}
+
+.login-cred input {
+  /* margin-top: 10px; */
+  height: 25px;
+}
+.login-cred p{
+    font-weight: 300;
+    color: gray;
+    font-size: 15px;
+}
+
+.login-cred button {
+  margin-top: 35px;
+  height: 35px;
+  color: white;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(154, 70, 252, 1) 89%
+  );
+}
+
+.login-text {
+  /* border: 2px solid black; */
+  margin-top: 150px;
+  height: fit-content;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.forgot-pass{
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    color: gray;
+    font-size: 15px;
+}
