@@ -5,7 +5,7 @@ import AddNewField from '../AddNewField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import Modal from '../Modal';
+import PopUp from './../PopUp/index';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 import { makeRequest } from './../../utils/makeRequest';
@@ -103,7 +103,7 @@ export default function ContentDashboard() {
         </div>
       </div>
       {isOpen && (
-        <Modal
+        <PopUp
           setIsOpen={setIsOpen}
           modalOptions={modalOptions}
           setModalOptions={setModalOptions}

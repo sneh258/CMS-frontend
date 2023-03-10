@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
 
-export default function SideModal({ setIsOpen }) {
+export default function SlideView({ setIsOpen }) {
   return (
     <>
       <div className="background" onClick={() => setIsOpen(false)} />
@@ -33,6 +33,6 @@ export default function SideModal({ setIsOpen }) {
   );
 }
 
-SideModal.propTypes = {
+SlideView.propTypes = {
   setIsOpen: PropTypes.func.isRequired,
 };

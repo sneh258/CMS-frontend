@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
 
-export default function Modal({
+export default function PopUp({
   setIsOpen,
   modalOptions,
   setModalOptions,
@@ -66,7 +66,7 @@ export default function Modal({
   );
 }
 
-Modal.propTypes = {
+PopUp.propTypes = {
   setIsOpen: PropTypes.func.isRequired,
   modalOptions: PropTypes.shape({
     heading: PropTypes.string.isRequired,

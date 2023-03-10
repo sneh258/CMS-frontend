@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Entry from '../Entry';
-import SideModal from '../SideModal';
+import SlideView from '../SlideView';
 import Header from '../Header';
 import { useNavigate, useParams } from 'react-router-dom';
 import './index.css';
@@ -43,11 +43,6 @@ export default function CollectionType() {
             {col}
           </div>
         ))}
-        {/* <div className="id-entry">ID</div>
-        <div className="name-entry">Name</div>
-        <div className="entry">Field 1</div>
-        <div className="entry">Field 2</div>
-        <div className="entry-options">Actions</div> */}
       </div>
       {collections.map((data, index) => {
         return collections.length !== 0 ? (
@@ -56,7 +51,7 @@ export default function CollectionType() {
           <></>
         );
       })}
-      {isOpen && <SideModal setIsOpen={setIsOpen} />}
+      {isOpen && <SlideView setIsOpen={setIsOpen} />}
     </div>
   );
 }
