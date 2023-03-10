@@ -13,6 +13,12 @@ export default function SlideView({ setIsOpen }) {
           </div>
           <div className="box-content">Name</div>
           <input type="text" className="modal-input" />
+          <div className="box-content">Value 1</div>
+          <input type="text" className="modal-input" />
+          <div className="box-content">Value 2</div>
+          <input type="text" className="modal-input" />
+          <div className="box-content">Value 3</div>
+          <input type="text" className="modal-input" />
 
           <div className="box-actions">
             <div className="actions-container">
