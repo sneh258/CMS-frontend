@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +18,7 @@ export default function ContentBuilder() {
 
   return (
     <div className="content-builder">
-      <div className="header">
+      <div className="header" onClick={()=>navigate('/dashboard')}>
         <p>CMS+</p>
       </div>
       <div className="collection-type">
@@ -31,7 +30,7 @@ export default function ContentBuilder() {
         </div>
         <ul className="list">
           {collections.map((collection) => (
-            <li key={collection.id}>{collection.name}</li>
+            <li onClick={()=>navigate(`/dashboard/collection/${collection.id}`)} key={collection.id}>{collection.name}</li>
           ))}
         </ul>
       </div>

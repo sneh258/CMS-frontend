@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { MdContentCopy } from 'react-icons/md';
@@ -25,25 +24,13 @@ export default function Entry({ data }) {
           </div>
         </div>
       </div>
-      {/* // {cols.map((x)=>(<div className="entry-container">
-    //   <div className="id-entry">{ data[x]}</div>
-    //   <div className="entry-options">
-    //     <MdContentCopy />
-    //     <FaRegEdit />
-    //     <RiDeleteBin6Line />
-    //   </div>
-    // </div>))}
-    // <div className="entry-container">
-    //   <div className="id-entry">1</div>
-    //   <div className="name-entry">Name</div>
-    //   <div className="entry">Text</div>
-    //   <div className="entry">Text</div>
-    //   <div className="entry-options">
-    //     <MdContentCopy />
-    //     <FaRegEdit />
-    //     <RiDeleteBin6Line />
-    //   </div>
-    // </div> */}
     </>
   );
 }
+
+Entry.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
+
+

@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Entry from '../Entry';
 import SideModal from '../SideModal';
 import Header from '../Header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './index.css';
 import { makeRequest } from '../../utils/makeRequest';
 import { GET_DATA_OF_COLLECTION } from '../../constants/apiEndPoints';
 
 export default function CollectionType() {
+  const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [collections, setCollections] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -15,7 +16,7 @@ export default function CollectionType() {
 
   useEffect(() => {
     makeRequest(GET_DATA_OF_COLLECTION, navigate, {
-      data: { collection_id: 1 },
+      data: { collection_id: id },
     }).then((response) => {
       setCollections(response.data);
       const col = [];
@@ -25,7 +26,7 @@ export default function CollectionType() {
       }
       setColumns(col);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div className="collection-type-container">

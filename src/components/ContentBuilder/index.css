@@ -42,6 +42,12 @@
 
 .list {
   padding-left: 30px;
+  cursor: pointer;
+}
+
+li:hover{
+  background-color: black;
+  color: white;
 }
 
 li {

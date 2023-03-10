@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import AddNewType from '../AddNewType';
@@ -29,22 +28,22 @@ export default function ContentDashboard() {
     setModalOptions(modalOptions);
     setIsOpen(true);
   };
+  
+  const addContentTypeHandler = async (inputHeading) => {
+    await makeRequest(CREATE_CONTENT_TYPE_URL, navigate, {
+      data: {
+        name: inputHeading,
+      },
+    }).then((response) => {
+      setCollections([...collections, response.data]);
+    });
+  };
   const showAddNewFieldModal = () => {
     modalOptions.heading = 'Add New Field';
     modalOptions.inputHeading = 'Name of the field';
     modalOptions.typeHeading = 'Type of the field';
     setModalOptions(modalOptions);
     setIsOpen(true);
-  };
-
-  const addContentTypeHandler = async (inputHeading) => {
-    await makeRequest(CREATE_CONTENT_TYPE_URL, navigate, {
-      data: {
-        name: inputHeading
-      }
-    }).then((response) => {
-      setCollections([...collections, response.data]);
-    });
   };
 
   useEffect(() => {
@@ -67,9 +66,11 @@ export default function ContentDashboard() {
       <Header text={'Content Type'} />
       <div className="details">
         <div className="add-content-type">
-          <div className='num-header'>
+          <div className="num-header">
             <p>{collections.length} Types</p>
-            <p><FontAwesomeIcon icon={faMagnifyingGlass}/></p>
+            <p>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </p>
           </div>
           <div className="new-type">
             <p onClick={showAddNewContentModal}>+ New Type</p>
@@ -87,9 +88,9 @@ export default function ContentDashboard() {
         <div className="add-field">
           <div className="table-profile">
             <p>
-              Company_Profile <FontAwesomeIcon icon={faEdit} />
+              abc_company <FontAwesomeIcon icon={faEdit} />
             </p>
-            <p id="number-of-fields">13 fields</p>
+            <p id="number-of-fields">{columns.length} fields</p>
           </div>
           <div className="new-field">
             <p onClick={showAddNewFieldModal}>+ Add another field</p>

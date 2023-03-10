@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import './index.css';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 export default function AddNewField({ col }) {
+  
   return (
     <div className="add-new-field">
       <div className="logo">
@@ -28,5 +29,9 @@ export default function AddNewField({ col }) {
     </div>
   );
 }
+
+AddNewField.propTypes = {
+  col: PropTypes.array.isRequired
+};
 
 

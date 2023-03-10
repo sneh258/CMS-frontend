@@ -6,7 +6,6 @@ const makeRequest = async (
   apiEndPoint,
   navigate,
   dynamicConfig = {},
-  token
 ) => {
   try {
     console.log(dynamicConfig);
@@ -16,7 +15,7 @@ const makeRequest = async (
       method: apiEndPoint.method,
       ...dynamicConfig,
       headers: {
-        authorization: `Bearer ${token}`,
+        authorization: `Bearer ${localStorage.getItem('jwt_token')}`,
       },
     };
     const { data } = await axios(requestDetails);

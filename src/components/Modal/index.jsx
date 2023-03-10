@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
@@ -8,7 +6,6 @@ export default function Modal({
   setIsOpen,
   modalOptions,
   setModalOptions,
-  addContentTypeHandler,
 }) {
   const [inputHeading, setInputHeading] = useState('');
   const [typeHeading, setTypeHeading] = useState('');
@@ -54,7 +51,7 @@ export default function Modal({
               <button
                 className="create-button"
                 onClick={() => {
-                  addContentTypeHandler(inputHeading);
+                  // addContentTypeHandler(inputHeading);
                   setIsOpen(false);
                   setModalOptions({});
                 }}

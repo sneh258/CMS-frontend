@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
@@ -43,7 +41,7 @@ export default function UserRegister() {
         </div>
         <div className="login-div">
           <div className="sub-login-div">
-            <div className="login-text">Login to your CMS+ account</div>
+            <div className="login-text">Register to your CMS+ account</div>
             <div className="login-cred">
               <p>Email:</p>
               <input
