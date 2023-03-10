@@ -44,4 +44,20 @@ export const GET_COLLECTION_DETAILS = {
   url: 'collection/details',
   method: 'get',
 };
+export const GET_DATA_OF_COLLECTION = {
+  url: 'collection/details',
+  method: 'post',
+};
+export const DELETE_ENTRY_OF_COLLECTION= {
+  url: 'collection/field',
+  method: 'delete',
+};
+export const EDIT_ENTRY_OF_COLLECTION= {
+  url: 'collection/update',
+  method: 'patch',
+};
+export const ADD_ENTRY_TO_COLLECTION= {
+  url: 'collection/update',
+  method: 'post',
+};
 

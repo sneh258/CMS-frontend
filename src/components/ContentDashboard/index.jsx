@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './index.css';
 import AddNewType from '../AddNewType';
 import AddNewField from '../AddNewField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal';
+import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
+import {makeRequest} from './../../utils/makeRequest';
+import { GET_COLLECTION_DETAILS} from '../../constants/apiEndPoints';
 
 export default function ContentDashboard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +28,17 @@ export default function ContentDashboard() {
     setIsOpen(true);
   };
 
+  const [collections, setCollections] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    makeRequest(GET_COLLECTION_DETAILS, navigate).then((response) => {
+      setCollections(response.data);
+    });
+  }, []);
+
+
+
   return (
     <div className="main_div">
       <Header />
@@ -34,9 +48,9 @@ export default function ContentDashboard() {
             <p onClick={showAddNewContentModal}>+ New Type</p>
           </div>
           <div>
-            <AddNewType />
-            <AddNewType />
-            <AddNewType />
+            {collections.length!==0 ?collections.map((collections) => (
+              <AddNewType key={collections.id} data = {collections.name} />
+            )):<div>Loading...</div>}
           </div>
         </div>
         <div className="add-field">

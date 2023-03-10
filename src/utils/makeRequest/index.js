@@ -9,6 +9,7 @@ const makeRequest = async (
   token
 ) => {
   try {
+    console.log(dynamicConfig);
     const requestDetails = {
       baseURL: BACKEND_URL,
       url: apiEndPoint.url,
