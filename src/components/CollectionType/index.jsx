@@ -19,7 +19,7 @@ export default function CollectionType() {
     }).then((response) => {
       setCollections(response.data);
       const col = [];
-      for (let key in response.data[0]) {
+      for (let key in response.data[0].values.values) {
         col.push(key);
         if (col.length == 4) break;
       }
