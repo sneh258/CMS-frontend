@@ -31,7 +31,7 @@ export default function AddNewField({ col }) {
 }
 
 AddNewField.propTypes = {
-  col: PropTypes.array.isRequired
+  col: PropTypes.string.isRequired
 };
 
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { makeAuthRequest } from '..';
-import { LOGIN_URL } from '../../../constants/apiEndpoints';
+import { makeRequest } from '..';
+import { BACKEND_URL } from '../../../constants/apiEndpoints';
 import { ERROR_ROUTE } from '../../../constants/routes';
 
 jest.mock('axios');
@@ -14,7 +14,7 @@ describe('makeRequest', () => {
   it('should navigate to error page with status code when API call returns error status code', async () => {
     mockedAxios.mockRejectedValueOnce({ response: { status: 500 } });
     expect(mockNavigate).not.toBeCalled();
-    await makeAuthRequest(LOGIN_URL, mockNavigate, {
+    await makeRequest(BACKEND_URL, mockNavigate, {
       data: {
         username: 'test',
         password: 'test',
@@ -26,7 +26,7 @@ describe('makeRequest', () => {
   it('should navigate to error page without status code when API call returns error without status code', async () => {
     mockedAxios.mockRejectedValueOnce({});
     expect(mockNavigate).not.toBeCalled();
-    await makeAuthRequest(LOGIN_URL, mockNavigate, {
+    await makeRequest(BACKEND_URL, mockNavigate, {
       data: {
         username: 'test',
         password: 'test',

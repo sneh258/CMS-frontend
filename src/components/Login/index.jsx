@@ -32,7 +32,7 @@ export default function UserLogin() {
   return (
     <>
       {error && <div>invalid password or username</div>}
-      <div className="main-div">
+      <div data-testid="login-form" className="main-div">
         <div className="image-div">
           <p id="p1">Design APIs Fast,</p>
           <p id="p2">Manage content easily.</p>
@@ -44,6 +44,7 @@ export default function UserLogin() {
             <div className="login-cred">
               <p>Email:</p>
               <input
+                data-testid="email-input"
                 type="email"
                 name="username"
                 value={user}
@@ -51,6 +52,7 @@ export default function UserLogin() {
               />
               <p>Password:</p>
               <input
+                data-testid="password-input"
                 type="password"
                 name="password"
                 value={password}

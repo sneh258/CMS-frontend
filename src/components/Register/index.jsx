@@ -33,7 +33,7 @@ export default function UserRegister() {
   return (
     <>
       {error && <div>username already exists</div>}
-      <div className="main-div">
+      <div data-testid="register-form" className="main-div">
         <div className="image-div">
           <p id="p1">Design APIs Fast,</p>
           <p id="p2">Manage content easily.</p>
@@ -45,6 +45,7 @@ export default function UserRegister() {
             <div className="login-cred">
               <p>Email:</p>
               <input
+                data-testid="email-input"
                 type="email"
                 name="username"
                 value={user}
@@ -53,6 +54,7 @@ export default function UserRegister() {
               />
               <p>Password:</p>
               <input
+                data-testid="password-input"
                 type="password"
                 name="password"
                 value={password}

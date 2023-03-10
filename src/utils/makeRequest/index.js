@@ -2,6 +2,19 @@ import axios from 'axios';
 import { BACKEND_URL, AUTH_URL } from '../../constants/apiEndPoints';
 import { ERROR_ROUTE } from '../../constants/routes';
 
+
+const makeAuthRequest = async (apiEndPoint, dynmaicConfig) => {
+  const requestDetails = {
+    baseURL: AUTH_URL,
+    url: apiEndPoint.url,
+    method: apiEndPoint.method,
+    ...dynmaicConfig,
+  };
+
+  const { data } = await axios(requestDetails);
+  return data;
+};
+
 const makeRequest = async (
   apiEndPoint,
   navigate,
@@ -29,18 +42,6 @@ const makeRequest = async (
     }
     return null;
   }
-};
-
-const makeAuthRequest = async (apiEndPoint, dynmaicConfig) => {
-  const requestDetails = {
-    baseURL: AUTH_URL,
-    url: apiEndPoint.url,
-    method: apiEndPoint.method,
-    ...dynmaicConfig,
-  };
-
-  const { data } = await axios(requestDetails);
-  return data;
 };
 
 export { makeRequest, makeAuthRequest };

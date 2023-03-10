@@ -31,6 +31,3 @@ export default function Entry({ data }) {
 Entry.propTypes = {
   data: PropTypes.array.isRequired,
 };
-
-
-
