@@ -1,21 +1,28 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
 
-export default function Modal({ setIsOpen, modalOptions, setModalOptions }) {
+export default function Modal({
+  setIsOpen,
+  modalOptions,
+  setModalOptions,
+  addContentTypeHandler,
+}) {
   const [inputHeading, setInputHeading] = useState('');
   const [typeHeading, setTypeHeading] = useState('');
   return (
     <>
-      <div className="dark-bg" onClick={() => setIsOpen(false)} />
+      <div className="background" onClick={() => setIsOpen(false)} />
       <div className="centered">
         <div
           className={`modal ${modalOptions.typeHeading ? 'modal-height' : ''}`}
         >
-          <div className="modal-header">
+          <div className="header-mod">
             <h5 className="heading">{modalOptions.heading}</h5>
           </div>
-          <div className="modal-content">{modalOptions.inputHeading}</div>
+          <div className="box-content">{modalOptions.inputHeading}</div>
           <input
             type="text"
             className="modal-input"
@@ -24,7 +31,7 @@ export default function Modal({ setIsOpen, modalOptions, setModalOptions }) {
           />
           {modalOptions.typeHeading && (
             <>
-              <div className="modal-content">{modalOptions.typeHeading}</div>
+              <div className="box-content">{modalOptions.typeHeading}</div>
               <input
                 type="text"
                 className="modal-input"
@@ -33,10 +40,10 @@ export default function Modal({ setIsOpen, modalOptions, setModalOptions }) {
               />
             </>
           )}
-          <div className="modal-actions">
+          <div className="box-actions">
             <div className="actions-container">
               <button
-                className="cancel-btn"
+                className="cancel"
                 onClick={() => {
                   setIsOpen(false);
                   setModalOptions({});
@@ -45,8 +52,9 @@ export default function Modal({ setIsOpen, modalOptions, setModalOptions }) {
                 Cancel
               </button>
               <button
-                className="create-btn"
+                className="create-button"
                 onClick={() => {
+                  addContentTypeHandler(inputHeading);
                   setIsOpen(false);
                   setModalOptions({});
                 }}

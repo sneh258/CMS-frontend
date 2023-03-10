@@ -17,7 +17,7 @@ export const VALIDATE_TOKEN_URL = {
 };
 
 export const CREATE_CONTENT_TYPE_URL = {
-  url: 'record/save',
+  url: 'record/create',
   method: 'post',
 };
 export const UPDATE_CONTENT_TYPE_URL = {
@@ -25,15 +25,15 @@ export const UPDATE_CONTENT_TYPE_URL = {
   method: 'post',
 };
 export const ADD_FIELD_CONTENT_URL = {
-  url: 'record/field',
+  url: 'record/column',
   method: 'post',
 };
 export const EDIT_FIELD_CONTENT_URL = {
-  url: 'record/save',
+  url: 'record/column',
   method: 'patch',
 };
 export const DELETE_FIELD_CONTENT_URL = {
-  url: 'record/save',
+  url: 'record/column',
   method: 'delete',
 };
 export const GET_CONTENT_DETAIL_URL = {
@@ -49,7 +49,7 @@ export const GET_DATA_OF_COLLECTION = {
   method: 'post',
 };
 export const DELETE_ENTRY_OF_COLLECTION= {
-  url: 'collection/field',
+  url: 'collection/column',
   method: 'delete',
 };
 export const EDIT_ENTRY_OF_COLLECTION= {

@@ -5,6 +5,7 @@ import AddNewType from '../AddNewType';
 import AddNewField from '../AddNewField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
@@ -12,12 +13,15 @@ import { makeRequest } from './../../utils/makeRequest';
 import {
   GET_COLLECTION_DETAILS,
   GET_DATA_OF_COLLECTION,
+  CREATE_CONTENT_TYPE_URL,
 } from '../../constants/apiEndPoints';
 
 export default function ContentDashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [modalOptions, setModalOptions] = useState({});
   const [columns, setColumns] = useState([]);
+  const [collections, setCollections] = useState([]);
+  const navigate = useNavigate();
 
   const showAddNewContentModal = () => {
     modalOptions.heading = 'Add New Content Type';
@@ -33,8 +37,15 @@ export default function ContentDashboard() {
     setIsOpen(true);
   };
 
-  const [collections, setCollections] = useState([]);
-  const navigate = useNavigate();
+  const addContentTypeHandler = async (inputHeading) => {
+    await makeRequest(CREATE_CONTENT_TYPE_URL, navigate, {
+      data: {
+        name: inputHeading
+      }
+    }).then((response) => {
+      setCollections([...collections, response.data]);
+    });
+  };
 
   useEffect(() => {
     makeRequest(GET_COLLECTION_DETAILS, navigate).then((response) => {
@@ -56,6 +67,10 @@ export default function ContentDashboard() {
       <Header text={'Content Type'} />
       <div className="details">
         <div className="add-content-type">
+          <div className='num-header'>
+            <p>{collections.length} Types</p>
+            <p><FontAwesomeIcon icon={faMagnifyingGlass}/></p>
+          </div>
           <div className="new-type">
             <p onClick={showAddNewContentModal}>+ New Type</p>
           </div>
@@ -77,7 +92,7 @@ export default function ContentDashboard() {
             <p id="number-of-fields">13 fields</p>
           </div>
           <div className="new-field">
-            <p onClick={showAddNewFieldModal}>Add another field</p>
+            <p onClick={showAddNewFieldModal}>+ Add another field</p>
           </div>
           <div>
             {columns.map((col, index) => (
@@ -91,6 +106,7 @@ export default function ContentDashboard() {
           setIsOpen={setIsOpen}
           modalOptions={modalOptions}
           setModalOptions={setModalOptions}
+          addContentTypeHandler={addContentTypeHandler}
         />
       )}
     </div>
