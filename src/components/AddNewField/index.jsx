@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
-export default function AddNewField() {
+export default function AddNewField({ col }) {
   return (
     <div className="add-new-field">
       <div className="logo">
         <p>AB</p>
       </div>
       <div className="field">
-        <p>Name</p>
+        <p>{col}</p>
       </div>
       <div className="type">
         <p>Text</p>
@@ -27,3 +28,5 @@ export default function AddNewField() {
     </div>
   );
 }
+
+

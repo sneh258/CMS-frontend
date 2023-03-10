@@ -1,4 +1,5 @@
-import React, { useState,useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import './index.css';
 import AddNewType from '../AddNewType';
 import AddNewField from '../AddNewField';
@@ -7,12 +8,16 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
-import {makeRequest} from './../../utils/makeRequest';
-import { GET_COLLECTION_DETAILS} from '../../constants/apiEndPoints';
+import { makeRequest } from './../../utils/makeRequest';
+import {
+  GET_COLLECTION_DETAILS,
+  GET_DATA_OF_COLLECTION,
+} from '../../constants/apiEndPoints';
 
 export default function ContentDashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [modalOptions, setModalOptions] = useState({});
+  const [columns, setColumns] = useState([]);
 
   const showAddNewContentModal = () => {
     modalOptions.heading = 'Add New Content Type';
@@ -34,23 +39,34 @@ export default function ContentDashboard() {
   useEffect(() => {
     makeRequest(GET_COLLECTION_DETAILS, navigate).then((response) => {
       setCollections(response.data);
+      makeRequest(GET_DATA_OF_COLLECTION, navigate, {
+        data: { collection_id: 1 },
+      }).then((response) => {
+        const col = [];
+        for (let key in response.data[0].values.values) {
+          col.push(key);
+        }
+        setColumns(col);
+      });
     });
   }, []);
 
-
-
   return (
     <div className="main_div">
-      <Header />
+      <Header text={'Content Type'} />
       <div className="details">
         <div className="add-content-type">
           <div className="new-type">
             <p onClick={showAddNewContentModal}>+ New Type</p>
           </div>
           <div>
-            {collections.length!==0 ?collections.map((collections) => (
-              <AddNewType key={collections.id} data = {collections.name} />
-            )):<div>Loading...</div>}
+            {collections.length !== 0 ? (
+              collections.map((collections) => (
+                <AddNewType key={collections.id} data={collections.name} />
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </div>
         </div>
         <div className="add-field">
@@ -64,7 +80,9 @@ export default function ContentDashboard() {
             <p onClick={showAddNewFieldModal}>Add another field</p>
           </div>
           <div>
-            <AddNewField />
+            {columns.map((col, index) => (
+              <AddNewField key={index} col={col} />
+            ))}
           </div>
         </div>
       </div>
