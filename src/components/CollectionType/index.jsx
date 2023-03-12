@@ -32,7 +32,7 @@ export default function CollectionType() {
     <div className="collection-type-container">
       <Header text={'abc_company'} />
       <div className="collection-type-header">
-        <div className="entries-number">3 Entries Found</div>
+        <div className="entries-number">{collections.length} Entry Found</div>
         <button className="add-entry" onClick={() => setIsOpen(true)}>
           Add a new entry
         </button>

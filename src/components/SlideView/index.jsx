@@ -11,13 +11,13 @@ export default function SlideView({ setIsOpen }) {
           <div className="header-mod">
             <h5 className="heading">New Company_Profile</h5>
           </div>
-          <div className="box-content">Name</div>
-          <input type="text" className="modal-input" />
           <div className="box-content">Value 1</div>
           <input type="text" className="modal-input" />
           <div className="box-content">Value 2</div>
           <input type="text" className="modal-input" />
           <div className="box-content">Value 3</div>
+          <input type="text" className="modal-input" />
+          <div className="box-content">Value 4</div>
           <input type="text" className="modal-input" />
 
           <div className="box-actions">
