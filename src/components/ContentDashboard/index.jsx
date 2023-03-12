@@ -50,7 +50,7 @@ export default function ContentDashboard() {
     makeRequest(GET_COLLECTION_DETAILS, navigate).then((response) => {
       setCollections(response.data);
       makeRequest(GET_DATA_OF_COLLECTION, navigate, {
-        data: { collection_id: 1 },
+        data: { collection_id: 3 },
       }).then((response) => {
         const col = [];
         for (let key in response.data[0].values.values) {
@@ -78,7 +78,7 @@ export default function ContentDashboard() {
           <div>
             {collections.length !== 0 ? (
               collections.map((collections) => (
-                <AddNewType key={collections.id} data={collections.name} />
+                <AddNewType key={collections.id} data={collections.name} id={collections.id } />
               ))
             ) : (
               <div>Loading...</div>
@@ -88,7 +88,7 @@ export default function ContentDashboard() {
         <div className="add-field">
           <div className="table-profile">
             <p>
-              abc_company <FontAwesomeIcon icon={faEdit} />
+              ambuja_cement <FontAwesomeIcon icon={faEdit} />
             </p>
             <p id="number-of-fields">{columns.length} fields</p>
           </div>

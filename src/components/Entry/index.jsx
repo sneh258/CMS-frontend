@@ -6,6 +6,10 @@ import { MdContentCopy } from 'react-icons/md';
 import './index.css';
 
 export default function Entry({ data }) {
+
+  const handleDelete = async() =>{
+    
+  };
   return (
     <>
       <div>
@@ -17,7 +21,7 @@ export default function Entry({ data }) {
               </div>
             );
           })}
-          <div className="entry-options">
+          <div onClick={handleDelete} className="entry-options">
             <MdContentCopy />
             <FaRegEdit />
             <RiDeleteBin6Line />

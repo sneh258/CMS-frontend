@@ -7,6 +7,7 @@ import Error from './pages/Error';
 import Dashboard from './pages/Dashboard';
 import Collection from './pages/Collection';
 import SingleCollection from './pages/SingleCollection';
+import SingleField from './pages/SingleField';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/dashboard" element={token?<Dashboard />:<Login/>} />
         <Route path="/dashboard/collection/:id" element={token?<Collection />:<Login/>} />
         <Route path="/dashboard/collection/" element={token?<SingleCollection />:<Login/>} />
+        <Route path="/dashboard/content/:id" element={token?<SingleField />:<Login/>} />
       </Routes>
     </BrowserRouter>
   );
