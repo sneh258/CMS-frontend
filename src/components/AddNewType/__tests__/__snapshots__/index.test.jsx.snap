@@ -11,27 +11,3 @@ exports[`Add new Content Type should render correctly 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`He should render correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="add-new-type"
-  >
-    <p>
-      value
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Header should render correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="add-new-type"
-  >
-    <p>
-      value
-    </p>
-  </div>
-</DocumentFragment>
-`;
